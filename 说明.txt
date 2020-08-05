@@ -1,0 +1,59 @@
+基本结构：由控制台Controller控制各类的方法
+Main--→Controller---→dialog-→结束
+                   ↘register
+                   ↘Forget
+                   ↘Database
+                   ↘userData
+
+                   ↘homePage（个人的主页界面）
+                   ↘headPorTrait（更改头像类）
+                   ↘addFriend-→searchLIst-→Apply-→-→结束（添加好友类）
+                              ↘Database  ↘userData
+                              ↘cacuAge   ↘chatManager
+                                            ↓playSound
+                   ↘friendPage（好友的主页界面）
+                   ↘mainWindow-→friendList-→-→结束（主窗口界面FriendList.fxml）
+                               ↘FriendGroup
+                               ↘MyFriend
+                   ↘
+
+
+Controller  程序的全局操控类
+Main        启动类
+
+模型类
+bubbleTool  消息气泡
+cacuAge     根据生日计算年龄
+chatManager 接收服务端的信息和发消息到服务端，利用多线程的方式
+Database    数据库操控类
+GetMessageCode  发送验证码
+HttpUtils   http协议
+playSound   消息提示音的播放
+TuLing      图灵自动回复
+
+模型类-数据类
+friendData  好友列表
+messageData 所有消息（包括好友的和助手的）
+userData    管理数据（封装）
+
+
+视图类
+addFriend   添加好友
+Alert       警告信息窗口3
+Apply       好友申请发送界面3
+ApplyAdd    好友接受3
+chat        聊天主窗口 MainWindow.fxml
+chatList    聊天列表框类
+Dialog      登录界面  1
+Forget      密码重置  1
+FriendGroup 好友分组2
+friendList  好友列表类2
+friendPage  好友的主页界面2
+HeadPorTrait更改头像类
+homePage    个人主页界面
+mainWindow  主窗口界面
+MyFriend    好友信息  2
+Register    注册界面  1
+searchLIst  搜索好友列表
+Window      所有窗口的父类（虚类，统一构建属性）
+

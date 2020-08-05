@@ -1,0 +1,61 @@
+<!-- 文件头，格式xml 版本 编码-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!--模块-->
+<module type="JAVA_MODULE" version="4">
+  <!--容器(内容) NewModuleRootManager新模块管理-->
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <!--模块源码-源码路径-isTestSource="false"是否是测试源-->
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <!--orderEntry按顺序导入基本模块-->
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jrt-fs" level="project" />
+    <!--导入驱动包-->
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://F:/JAVA/mysql-connector-java-8.0.15/mysql-connector-java-8.0.15.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+
+    <!-- 需要在项目结构上添加jar目录-->
+    <orderEntry type="module-library" exported="">
+     <!-- library配置jar包文件，$MODULE_DIR$为模块路径 recursive="false"表示递归调用-->
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/jar" />
+        </CLASSES>
+
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/jar" recursive="false" />
+      </library>
+    </orderEntry>
+
+    <!-- 这里配置fxml文件-->
+    <build>
+          	<resources>
+
+          		<resource>
+          			<!-- 这里是放在 src/main/java-->
+          			<directory>src/View</directory>
+          			<includes>
+          				<include>**/*.properties</include>
+          				<include>**/*.fxml</include>
+          				<include>**/Fxml/*.fxml</include>
+          				<!-- 如果想要弄个包名专门放fxml文件，像上一行这样添加设置 -->
+          				<!-- 之后，使用getResource("fxml/xx.fxml")这样子 -->
+          			</includes>
+          			<filtering>false</filtering>
+          		</resource>
+          	</resources>
+          </build>
+
+  </component>
+</module>
